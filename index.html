@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="https://www.soundjay.com/misc/sounds/romantic-piano-01.wav" type="audio/wav"> <!-- Placeholder romantic music; replace with a real URL -->
+    </audio>
+
+    <div class="container">
+        <!-- Landing Page -->
+        <div id="landing">
+            <h1>Will You Be My Valentine?</h1>
+            <input type="text" id="name-input" placeholder="Enter your name" maxlength="50">
+            <div class="buttons">
+                <button id="yes-btn">💖 Yes</button>
+                <button id="no-btn">😢 No</button>
+            </div>
+        </div>
+
+        <!-- Date Scheduling Form -->
+        <div id="date-form" class="hidden">
+            <h2>Let's Plan Our Date, <span id="user-name"></span>! 💕</h2>
+            <label for="date-picker">📅 Choose a Date:</label>
+            <input type="date" id="date-picker">
+            <label for="time-picker">⏰ Choose a Time:</label>
+            <input type="time" id="time-picker">
+            <label for="location-input">📍 Choose a Place:</label>
+            <input type="text" id="location-input" placeholder="e.g., Romantic Restaurant">
+            <button id="confirm-btn">Confirm Date</button>
+        </div>
+
+        <!-- Romantic Greeting -->
+        <div id="greeting" class="hidden">
+            <p id="greeting-text"></p>
+        </div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-hearts"></div>
+    <div class="sparkles"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
