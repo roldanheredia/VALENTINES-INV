@@ -1,0 +1,247 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fecfef, #ffecd2, #ffb3ba); /* Animated gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Bonus: Gentle animated gradient */
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #d63384;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.container {
+    text-align: center;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Added margin for small screens */
+}
+
+/* Title */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.5); /* Glowing effect */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+input {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ffb3ba;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #ff6b9d;
+}
+
+/* Labels for inputs */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b9d, #d63384);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, font-size 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-width: 120px; /* Ensures touch-friendly size */
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#no-btn {
+    transition: transform 0.3s ease, font-size 0.3s ease, left 0.3s ease; /* For shrinking and moving */
+    position: relative;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Greeting */
+#greeting p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Typing Animation for Greeting (Bonus) */
+.typing {
+    border-right: 2px solid #d63384;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: #d63384; }
+}
+
+/* Floating Hearts */
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 2rem;
+    color: #ff6b9d;
+    animation: float 10s infinite linear;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Sparkles (Bonus: Glowing Particles) */
+.sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #ff6b9d;
+    border-radius: 50%;
+    animation: sparkle 3s infinite ease-in-out;
+    box-shadow: 0 0 10px #ff6b9d;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6b9d;
+    border-radius: 50%;
+    animation: confetti-fall 3s ease-in-out infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Floral Background (Simulated with CSS) */
+.container::before {
+    content: '🌸🌹💐';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    font-size: 3rem;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Responsive Design */
+/* Mobile (small phones) */
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .container { padding: 10px; max-width: 95%; }
+    input { width: 95%; padding: 12px; font-size: 0.9rem; }
+    label { width: 95%; font-size: 0.9rem; }
+    button { padding: 10px 20px; font-size: 1rem; min-width: 100px; }
+    .buttons { flex-direction: column; gap: 15px; }
+    .floating-heart { font-size: 1.5rem; } /* Smaller hearts for performance */
+    .sparkle { width: 3px; height: 3px; } /* Smaller sparkles */
+    .container::before { font-size: 2rem; } /* Smaller florals */
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .container { padding: 15px; max-width: 80%; }
+    input { width: 85%; }
+    button { padding: 14px 28px; font-size: 1.1rem; }
+    .buttons { gap: 15px; }
+}
+
+/* Desktop and larger */
+@media (min-width: 1025px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.2rem; }
+    .container { padding: 25px; max-width: 700px; }
+    input { width: 75%; padding: 18px; }
+    button { padding: 18px 35px; font-size: 1.3rem; }
+    .floating-heart { font-size: 2.5rem; } /* Larger hearts for bigger screens */
+    .sparkle { width: 6px; height: 6px; }
+    .container::before { font-size: 4rem; }
+}
